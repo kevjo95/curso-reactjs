@@ -19,14 +19,14 @@ switch (capitulo) {
         break;
     case 3: //1.3 Funciones
         //Funcion dentro de variable
-        const consultaPokemon = function (nombreCliente) {
-            console.log(`Consulta datos del Pokemon: ${nombreCliente}`)
+        const consultaPokemon = function (nombrePokemon) {
+            console.log(`Consulta datos del Pokemon: ${nombrePokemon}`);
         }
         consultaPokemon('Tyranitar');
 
         // Funcion llamada por si misma
-        (function (nombreCliente) {
-            console.log(`Consulta datos del Pokemon: ${nombreCliente}`)
+        (function (nombrePokemon) {
+            console.log(`Consulta datos del Pokemon: ${nombrePokemon}`)
         })();
         break;
     case 4: //1.4 Funciones - parametros default
@@ -47,7 +47,79 @@ switch (capitulo) {
         //https://es.stackoverflow.com/questions/101927/diferencia-entre-arrow-function-y-function-normal-al-llamar-al-m%C3%A9todo-subscribe
         break;
     case 6: //1.6 Objetos JS - Object literal
+        const Pokemon = {
+            nombre: 'Bulbasaur',
+            noDexNac: 1,
+            nivel: 5
+        }
+        console.log(Pokemon)
+        console.log(`${Pokemon.nombre} ha subido al nivel ${Pokemon.nivel + 1}!`);
+        break;
+    case 7: //1.7 Object Constructor
+        function PokemonEquipo(nombre, noDexNac, tipos, nivel) {
+            this.nombre = nombre;
+            this.noDexNac = noDexNac;
+            this.tipos = tipos
+            this.nivel = nivel;
+        }
+
+        const bulbasaur = new PokemonEquipo('bulbasaur', '001', ['planta'], 5);
+        console.log(`Haz elegido al inicial tipo ${bulbasaur.tipos[0]}, ${bulbasaur.nombre} como tu pokémon inicial!`);
+        break;
+    case 8: //1.8 Prototypes
+        // Object constructor
+        function Telefonos(marca, modelo, precio) {
+            this.marca = marca;
+            this.modelo = modelo;
+            this.precio = precio;
+        }
+
+        // se agrega un prototype
+        Telefonos.prototype.mostrarInfo = () => {
+            return `Su compra es ${cel1.marca} ${cel1.modelo} con un precio de ${cel1.precio}`
+        }
+        const cel1 = new Telefonos('LG', 'G7 ThinQ', '5,500.00 LPS');
+        console.log(cel1.mostrarInfo());
+        break;
+    case 9: //1.9 Object Destructuring
+        const JS = {
+            version: {
+                nueva: 'ES6+', 
+                anterior: 'ES5'
+            },
+            frameworks: ['AngularJS'],
+            librerias: ['ReactJS', 'VueJS']
+        }
+        let let_version = JS.version.nueva;
+        let let_frameworks = JS.frameworks[0];
+        console.log(let_version, let_frameworks);
+
+        //Se nombra la variable con la misma key del object, el lo mapea al primer nivel indicado
+        let {version} = JS;
+        let {nueva} = JS.version
+
+        console.log(version, nueva);
+        break;
+    case 10: //1.20 Objects Enhancement
         
+        let armaCorta = 'latigo';
+        let armaMedia = 'lanza';
+        let armaLarga = 'hacha';
+        let recuperacion = 'latigo';
+
+        //Forma vieja
+        const jugador1 = {
+            nombre: 'Byleth',
+            armaCorta: armaCorta,
+            armaMedia: armaMedia,
+            armaLarga: armaLarga,
+            recuperacion: recuperacion 
+        }
+        //Forma nueva
+        const jugador2 = {nombre:'Byleth', armaCorta, armaMedia, armaLarga, recuperacion};
+
+        console.log(jugador1);
+        console.log(jugador2);
         break;
     default:
         break;
