@@ -1,7 +1,7 @@
 let capitulo = 5
 
 switch (capitulo) {
-    case 1: // 1.1 - Scope de variables
+    case 1: // 2.11 - Scope de variables
         let genero = "Rock";
 
         if (genero) {
@@ -11,13 +11,13 @@ switch (capitulo) {
 
         console.log("Despues del IF ", genero);    
         break;
-    case 2: //1.2 Template de Strings
+    case 2: //2.12 Template de Strings
         const nombre = "Bulbasaur"
         const tipo = "Planta"
 
         console.log(`Pokemon: ${nombre}, Tipo: ${tipo}`);
         break;
-    case 3: //1.3 Funciones
+    case 3: //2.13 Funciones
         //Funcion dentro de variable
         const consultaPokemon = function (nombrePokemon) {
             console.log(`Consulta datos del Pokemon: ${nombrePokemon}`);
@@ -29,14 +29,14 @@ switch (capitulo) {
             console.log(`Consulta datos del Pokemon: ${nombrePokemon}`)
         })();
         break;
-    case 4: //1.4 Funciones - parametros default
+    case 4: //2.14 Funciones - parametros default
         function atacar(pokemon, ataque = 'combate') {
             console.log(`${pokemon} a usado ${ataque}`)
         }
         atacar('Incineroar', 'Lariat');
         atacar('Incineroar'); 
         break;
-    case 5: //1.5 Funciones de flecha
+    case 5: //2.15 Funciones de flecha
         let accion = (pokemon, ataque = 'combate') => {
             console.log(`${pokemon} a usado ${ataque}`)
         }
@@ -46,7 +46,7 @@ switch (capitulo) {
         // Cual es la diferencia entre arrow fx y normal fx?
         //https://es.stackoverflow.com/questions/101927/diferencia-entre-arrow-function-y-function-normal-al-llamar-al-m%C3%A9todo-subscribe
         break;
-    case 6: //1.6 Objetos JS - Object literal
+    case 6: //2.16 Objetos JS - Object literal
         const Pokemon = {
             nombre: 'Bulbasaur',
             noDexNac: 1,
@@ -55,7 +55,7 @@ switch (capitulo) {
         console.log(Pokemon)
         console.log(`${Pokemon.nombre} ha subido al nivel ${Pokemon.nivel + 1}!`);
         break;
-    case 7: //1.7 Object Constructor
+    case 7: //2.17 Object Constructor
         function PokemonEquipo(nombre, noDexNac, tipos, nivel) {
             this.nombre = nombre;
             this.noDexNac = noDexNac;
@@ -66,7 +66,7 @@ switch (capitulo) {
         const bulbasaur = new PokemonEquipo('bulbasaur', '001', ['planta'], 5);
         console.log(`Haz elegido al inicial tipo ${bulbasaur.tipos[0]}, ${bulbasaur.nombre} como tu pokémon inicial!`);
         break;
-    case 8: //1.8 Prototypes
+    case 8: //2.18 Prototypes
         // Object constructor
         function Telefonos(marca, modelo, precio) {
             this.marca = marca;
@@ -81,7 +81,7 @@ switch (capitulo) {
         const cel1 = new Telefonos('LG', 'G7 ThinQ', '5,500.00 LPS');
         console.log(cel1.mostrarInfo());
         break;
-    case 9: //1.9 Object Destructuring
+    case 9: //2.19 Object Destructuring
         const JS = {
             version: {
                 nueva: 'ES6+', 
@@ -100,7 +100,7 @@ switch (capitulo) {
 
         console.log(version, nueva);
         break;
-    case 10: //1.20 Objects Enhancement
+    case 10: //2.20 Objects Enhancement
         
         let armaCorta = 'latigo';
         let armaMedia = 'lanza';
